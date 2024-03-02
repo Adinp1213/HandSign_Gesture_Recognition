@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 Then to run local django server
 ```
-cd SignApp
+cd WebApp/SignLanguage_Prediction
 python manage.py runserver
 ```
 demo:- 
