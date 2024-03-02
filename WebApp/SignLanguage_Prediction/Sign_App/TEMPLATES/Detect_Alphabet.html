@@ -1,0 +1,53 @@
+{% extends 'Base.html'%}
+{% block content%}
+{% if messages %}
+
+{% for message in messages %}
+{% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+{%load static%}
+<div style="background-image:  url('/media/bg1.jpg'); background-repeat:no-repeat;background-size:cover;  height:650px; width:100%;">
+
+<style>
+        .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.box > div { /*The > denotes only the first or immediate child will be affected*/
+  width: 500px;
+  height: auto;
+  /*border: dotted;
+*/
+  background-color: #CFE3E2;
+  border-radius: 5px
+}
+
+
+</style>
+
+
+
+<div class="box">
+    <div class="shadow-lg p-3 mb-5 ">
+        <div  class="row mb-3">
+            <img src="/media/Hand-gestures.webp">
+        </div>
+
+        <div class="mb-3" style="display: flex;justify-content: center;align-content: center;">
+        <form method="POST" action="/Detect/" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <input class="btn btn-warning" type="submit" name="" value="Detect">
+        </form>
+    </div>
+    </div>
+</div>
+    
+    
+</div>
+{% endblock %}
